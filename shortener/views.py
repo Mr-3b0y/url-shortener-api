@@ -1,4 +1,4 @@
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect, render, get_object_or_404
 from rest_framework.response import Response
 from rest_framework import viewsets, status
 from rest_framework.decorators import action
@@ -22,7 +22,8 @@ class ShortenViewset(viewsets.ModelViewSet):
 class RedirectView(viewsets.ViewSet):
     
     def retrieve(self, request, short_code=None):
-        shortener = Shortener.objects.get(short_code=short_code)
+        # shortener = Shortener.objects.get(short_code=short_code)
+        shortener = get_object_or_404(Shortener, short_code=short_code)
         if shortener:
             shortener.access_count += 1
             shortener.save()
