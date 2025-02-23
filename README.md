@@ -11,7 +11,7 @@ Este proyecto es una API para acortar URLs utilizando Django y Django REST Frame
 
 1. Clona el repositorio:
     ```sh
-    git clone https://github.com/tu-usuario/url-shortener-api.git
+    git clone https://github.com/Mr-3b0y/url-shortener-api.git
     cd url-shortener-api
     ```
 
